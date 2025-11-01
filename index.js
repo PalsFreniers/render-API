@@ -12,7 +12,7 @@ await app.register(cors, {
 });
 
 app.post("/api/message", async (req, reply) => {
-        const message = req.msg;
+        const message = req.body.msg;
         return reply.send({
                 message: `msg is ${message}`,
         });
