@@ -11,6 +11,13 @@ await app.register(cors, {
         methods: ['GET', 'POST', 'PUT'],
 });
 
+app.post("/api/message", async (req, reply) => {
+        const message = req.msg;
+        return reply.send({
+                message: `msg is ${message}`,
+        });
+});
+
 app.listen({ port: PORT, host: `0.0.0.0` }, (err) => {
     if (err) {
         console.error(err);
